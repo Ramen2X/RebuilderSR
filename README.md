@@ -11,6 +11,8 @@
 
 This is a barebones version of LEGO Island Rebuilder that is intended for speedrunners. It only contains options that are approved by the [LEGO Island speedrunning community](https://speedrun.com/li), limiting modification of LEGO Island's code to only what's necessary to cap the frame rate.
 
+This version can also happily co-exist alongside upstream Rebuilder, as its settings are stored separately from Rebuilder's.
+
 Like upstream Rebuilder, it supports [all known versions of LEGO Island](https://www.legoisland.org/wiki/index.php/LEGO_Island_Versions).
 
 ## Download
