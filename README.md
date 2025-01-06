@@ -1,7 +1,7 @@
 <b>Those playing LEGO Island casually *should not* use this. Use [upstream LEGO Island Rebuilder](https://github.com/isledecomp/LEGOIslandRebuilder) instead.</b>
 
 <h1 align="center">
-  <img src="./res/mama.ico" alt="LEGO Island Rebuilder" width="35" align="top">
+  <img src="./res/mama.ico" alt="LEGO Island Rebuilder (SR)" width="35" align="top">
   <b>LEGO Island Rebuilder (SR)</b>
 </h1>
 
