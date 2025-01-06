@@ -43,97 +43,12 @@ PatchGrid::PatchGrid()
 {
   SetBoldModified(true);
 
-  // General section
-  HSECTION sectionGeneral = AddSection("General");
-
-  AddPatch("DebugToggle",
-           "Enables the in-game debug mode automatically without the need to type OGEL.",
-           AddBoolItem(sectionGeneral, "Debug Mode", false));
-
-  AddPatch("MultipleInstances",
-           "By default, LEGO Island will allow only one instance of itself to run. "
-           "This patch allows infinite instances of LEGO Island to run.",
-           AddBoolItem(sectionGeneral, "Allow Multiple Instances", false));
-
-  AddPatch("SpeedUpStartUp",
-           "By default, LEGO Island waits 200 frames to ensure everything is initialized before starting. "
-           "That interval can be skipped without consequence in many cases.",
-           AddBoolItem(sectionGeneral, "Speed Up Startup", false));
-
-  AddPatch("StayActiveWhenDefocused",
-           "By default, LEGO Island pauses when it's not the active window. "
-           "This patch prevents that behavior.",
-           AddBoolItem(sectionGeneral, "Stay Active When Defocused", false));
-
-  AddPatch("RedirectSaveData",
-           "By default LEGO Island saves its game data in its Program Files folder. In newer versions of "
-           "Windows, this folder is considered privileged access, necessitating running LEGO Island as administrator "
-           "to save here. This patch sets LEGO Island's save location to %APPDATA% instead, which is an accessible and "
-           "standard location that most modern games and apps save to.",
-           AddBoolItem(sectionGeneral, "Redirect Save Files to %APPDATA%", false));
-
-  AddPatch("DisableAutoFinishBuilding",
-           "In LEGO Island v1.1, placing the last block when building will automatically end the building section. While convenient, "
-           "this prevents players from making any further changes after placing the last brick. It also notably defies what Bill Ding says - you "
-           "don't hit the triangle when you're finished building.\n\nThis patch restores the functionality in v1.0 where placing the last block "
-           "will not automatically finish the build section.",
-           AddBoolItem(sectionGeneral, "Disable Auto-Finish Building Section", false));
-
-  AddPatch("ExitCrashFix",
-           "LEGO Island contains a bug that frequently crashes the game when trying "
-           "to exit. This is particularly prevalent on newer versions of Windows and Wine. This "
-           "patch will fix the crash and the associated animation glitches and audio buzzes.",
-           AddBoolItem(sectionGeneral, "Exit Crash Fix", false));
-
   // Controls section
   HSECTION sectionControls = AddSection("Controls");
 
-  AddPatch("UseWASD",
-           "Enables the use of WASD keys for movement rather than the arrow keys. "
-           "NOTE: When using Debug Mode, this patch will re-map the conflicting debug keys to the arrow keys.",
-           AddBoolItem(sectionControls, "Use WASD", false));
   AddPatch("UseJoystick",
            "Enables Joystick functionality.",
            AddBoolItem(sectionControls, "Use Joystick", false));
-  AddPatch("MouseDeadzone",
-           "Sets the radius from the center of the screen where the mouse will do nothing (40 = default).",
-           AddIntegerItem(sectionControls, "Mouse Deadzone", 40));
-  AddPatch("UnhookTurnSpeed",
-           "LEGO Island contains a bug where the turning speed is influenced by the frame rate. Enable this to make the turn speed independent of the frame rate.",
-           AddBoolItem(sectionControls, "Unhook Turning From Frame Rate", false));
-  AddPatch("TurnUseVelocity",
-           "By default, LEGO Island ignores the turning acceleration/deceleration values. Set this to TRUE to utilize them (Default = FALSE)",
-           AddBoolItem(sectionControls, "Enable Turning Velocity", false));
-
-  // Navigation section
-  HSECTION sectionNavigation = AddSection("Navigation");
-
-  AddPatch("TurnMaxSpeed",
-           "Set the maximum turning speed. (Default = 20.0)",
-           AddDoubleItem(sectionNavigation, "Turning: Max Speed", 20.0));
-  AddPatch("TurnMaxAcceleration",
-           "Set the speed at which turning accelerates (requires 'Turning: Enable Velocity') (Default = 30.0)",
-           AddDoubleItem(sectionNavigation, "Turning: Max Acceleration", 30.0));
-  AddPatch("TurnMinAcceleration",
-           "Set the speed at which turning accelerates (requires 'Turning: Enable Velocity') (Default = 15.0)",
-           AddDoubleItem(sectionNavigation, "Turning: Min Acceleration", 15.0));
-  AddPatch("TurnDeceleration",
-           "Set the speed at which turning decelerates (requires 'Turning: Enable Velocity') (Default = 50.0)",
-           AddDoubleItem(sectionNavigation, "Turning: Deceleration", 50.0));
-  AddPatch("MovementMaxSpeed",
-           "Set the movement maximum speed. (Default = 40.0)",
-           AddDoubleItem(sectionNavigation, "Movement: Max Speed", 40.0));
-  AddPatch("MovementMaxAcceleration",
-           "Set the movement acceleration speed (i.e. how long it takes to go from not moving to top speed) (Default = 15.0)",
-           AddDoubleItem(sectionNavigation, "Movement: Max Acceleration", 15.0));
-  AddPatch("MovementMinAcceleration",
-           "Set the movement acceleration speed (i.e. how long it takes to go from not moving to top speed) (Default = 4.0)",
-           AddDoubleItem(sectionNavigation, "Movement: Min Acceleration", 4.0));
-  AddPatch("MovementDeceleration",
-           "Set the movement deceleration speed (i.e. how long it takes to slow to a stop after releasing the controls). "
-           "Increase this value to stop faster, decrease it to stop slower. "
-           "Usually this is set to a very high value making deceleration almost instant. (Default = 50.0)",
-           AddDoubleItem(sectionNavigation, "Movement: Deceleration", 50.0));
 
   // Graphics Section
   HSECTION sectionGraphics = AddSection("Graphics");
@@ -163,7 +78,6 @@ PatchGrid::PatchGrid()
 
   vector<string> fpsList;
   fpsList.push_back("Default");
-  fpsList.push_back("Uncapped");
   fpsList.push_back("Limited");
   AddPatch("FPSLimit",
            "Modify LEGO Island's frame rate cap",
@@ -172,39 +86,6 @@ PatchGrid::PatchGrid()
   AddPatch("CustomFPS",
            "If 'FPS Cap' is set to 'Limited', this will be the frame rate used.",
            AddDoubleItem(sectionGraphics, "FPS Cap - Custom Limit", 24.0));
-
-  vector<string> qualityList;
-  qualityList.push_back("Infinite");
-  qualityList.push_back("High");
-  qualityList.push_back("Medium");
-  qualityList.push_back("Low");
-  AddPatch("ModelQuality",
-           "Change LEGO Island's default model quality",
-           AddComboItem(sectionGraphics, "Model Quality", qualityList, 2));
-
-  vector<string> animationList;
-  animationList.push_back("No Animation");
-  animationList.push_back("Dissolve");
-  animationList.push_back("Mosaic");
-  animationList.push_back("Wipe Down");
-  animationList.push_back("Window");
-  animationList.push_back("Random");
-  AddPatch("TransitionType",
-           "Change LEGO Island's transition animation.",
-           AddComboItem(sectionGraphics, "Transition Type", animationList, 2));
-
-  AddPatch("TransitionSpeed",
-           "Sets the speed of LEGO Island's transition animations.\n\n(50 = default; lower = faster, higher = slower)",
-           AddIntegerItem(sectionGraphics, "Transition Speed", 50));
-
-  AddPatch("FOVMultiplier",
-           "Globally adjusts the field of view by a multiplier\n\n"
-           "1.0 = Default (greater than 1.0 is zoomed in, less than 1.0 is zoomed out)",
-           AddDoubleItem(sectionGraphics, "Field of View Adjustment", 1.0));
-
-  AddPatch("NativeSMK",
-           "Very few of LEGO Island's movies are actually the same resolution as the game. This patch disables scaling of these movies, causing LEGO Island to play them at their native resolutions.",
-           AddBoolItem(sectionGraphics, "Play Movies at Native Resolution", false));
 
   // Audio section
   HSECTION sectionMusic = AddSection("Audio");

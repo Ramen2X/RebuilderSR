@@ -138,10 +138,6 @@ SOURCE=..\src\clinkstatic.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\cmn\combo.h
-# End Source File
-# Begin Source File
-
 SOURCE=..\ext\PropertyGrid\CustomItem.h
 # End Source File
 # Begin Source File
