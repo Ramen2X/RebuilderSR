@@ -46,11 +46,8 @@ CRebuilderWindow::CRebuilderWindow()
   ZeroMemory(&tabItem, sizeof(tabItem));
   tabItem.mask |= TCIF_TEXT;
 
-  tabItem.pszText = "Patches";
+  tabItem.pszText = "Options";
   m_cTabCtrl.InsertItem(TAB_PATCHES, &tabItem);
-
-  tabItem.pszText = "Music";
-  m_cTabCtrl.InsertItem(TAB_MUSIC, &tabItem);
 
   // Create run button
   m_cRunBtn.Create("Run", WS_CHILD | WS_VISIBLE, CRect(), this, ID_RUN);
@@ -189,8 +186,6 @@ void CRebuilderWindow::OnSize(UINT type, int width, int height)
   m_cTabCtrl.GetPatchGrid().SetWindowPos(NULL, inner.left, inner.top, w, h, 0);
 
   h = inner.bottom - inner.top;
-  int musicLinkWidth = w/4*3;
-  m_cTabCtrl.GetMusicLink().SetWindowPos(NULL, inner.left + w/2 - musicLinkWidth/2, inner.top + m_nFontHeight, musicLinkWidth, h, 0);
 }
 
 void CRebuilderWindow::OnGetMinMaxInfo(MINMAXINFO *info)
@@ -209,7 +204,6 @@ void CRebuilderWindow::OnTabSelChange(NMHDR *pNMHDR, LRESULT *pResult)
   m_cTabCtrl.GetPatchGrid().ShowWindow((tab == TAB_PATCHES) ? SW_SHOWNORMAL : SW_HIDE);
   m_cTabCtrl.GetPatchTitle().ShowWindow((tab == TAB_PATCHES) ? SW_SHOWNORMAL : SW_HIDE);
   m_cTabCtrl.GetPatchDesc().ShowWindow((tab == TAB_PATCHES) ? SW_SHOWNORMAL : SW_HIDE);
-  m_cTabCtrl.GetMusicLink().ShowWindow((tab == TAB_MUSIC) ? SW_SHOWNORMAL : SW_HIDE);
 }
 
 BOOL CRebuilderWindow::SetFont(HWND child, LPARAM font)
@@ -268,7 +262,6 @@ void CRebuilderWindow::SetGUIFonts()
 
   HFONT link = CreateFontIndirect(&lf);
   SetFont(m_cTopLevelSubtitle.GetSafeHwnd(), (LPARAM)link);
-  SetFont(m_cTabCtrl.GetMusicLink().GetSafeHwnd(), (LPARAM)link);
 
   // While here, get height of font for layout purposes
   HDC hDC = ::GetDC(NULL);

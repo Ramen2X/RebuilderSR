@@ -6,17 +6,13 @@ void TabCtrl::CreateChildren()
   m_cPatchGrid.Create(AfxRegisterWndClass(CS_DBLCLKS | CS_HREDRAW | CS_VREDRAW), "Patch Grid", WS_CHILD | WS_VISIBLE, CRect(), this, ID_PATCHGRID);
   m_cPatchTitle.Create(CString("Welcome to LEGO Island Rebuilder (SR)"), WS_CHILD | WS_VISIBLE, CRect(), this, ID_PATCHTITLE);
   m_cPatchDesc.Create(CString("Select an option to get started."), WS_CHILD | WS_VISIBLE, CRect(), this, ID_PATCHDESC);
-
-  m_cMusicLink.Create("Coming back soon. If you need music replacement, download the old .NET version here.",
-                      WS_CHILD | SS_CENTER | SS_NOTIFY, CRect(), this, ID_MUSICLINK);
 }
 
 HBRUSH TabCtrl::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor) 
 {
   HBRUSH hbr = CWnd::OnCtlColor(pDC, pWnd, nCtlColor);
 
-  if (pWnd->GetDlgCtrlID() == ID_MUSICLINK
-      || pWnd->GetDlgCtrlID() == ID_PATCHTITLE
+  if (pWnd->GetDlgCtrlID() == ID_PATCHTITLE
       || pWnd->GetDlgCtrlID() == ID_PATCHDESC) {
     pDC->SetBkMode(TRANSPARENT);
     return (HBRUSH) GetStockObject(NULL_BRUSH);
@@ -46,13 +42,8 @@ LRESULT TabCtrl::OnGridSelChange(WPARAM wParam, LPARAM lParam)
   return 0;
 }
 
-void TabCtrl::OnMusicLinkClick()
-{
-  ShellExecute(NULL, _T("open"), _T("https://github.com/itsmattkc/LEGOIslandRebuilder/releases/tag/lastnet"), NULL, NULL, SW_SHOWNORMAL);
-}
 
 BEGIN_MESSAGE_MAP(TabCtrl, CTabCtrl)
   ON_WM_CTLCOLOR()
-  ON_BN_CLICKED(ID_MUSICLINK, OnMusicLinkClick)
   ON_MESSAGE(WM_PG_SELECTIONCHANGED, OnGridSelChange)
 END_MESSAGE_MAP()

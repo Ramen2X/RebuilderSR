@@ -49,7 +49,6 @@ private:
 
   enum Tab {
     TAB_PATCHES,
-    TAB_MUSIC
   };
 
   UINT m_nFontHeight;
