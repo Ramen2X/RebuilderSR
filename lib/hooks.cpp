@@ -26,7 +26,7 @@ HWND WINAPI InterceptCreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR
   }
 
   // Grab a copy of the ISLE window so we can do stuff with it
-  isleWindow = CreateWindowExA(dwExStyle, lpClassName, "LEGO Island: Rebuilt", dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+  isleWindow = CreateWindowExA(dwExStyle, lpClassName, "LEGO Island", dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
   return isleWindow;
 }
 

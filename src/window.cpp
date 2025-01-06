@@ -25,7 +25,7 @@ CRebuilderWindow::CRebuilderWindow()
                                          GetSysColorBrush(COLOR_3DFACE),
                                          LoadIcon(AfxGetInstanceHandle(), "IDI_ICON1"));
 
-  const char *title = "LEGO Island Rebuilder";
+  const char *title = "LEGO Island Rebuilder (SR)";
 
   // Create form
   CreateEx(WS_EX_OVERLAPPEDWINDOW, wndclass, title, WS_OVERLAPPEDWINDOW, 0, 0, 0, 0, NULL, NULL);

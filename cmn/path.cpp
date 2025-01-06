@@ -5,7 +5,7 @@
 #include <STRING>
 #include <TCHAR.H>
 
-LPCTSTR appName = TEXT("Rebuilder");
+LPCTSTR appName = TEXT("RebuilderSR");
 
 BOOL DirectoryExists(LPCTSTR szPath)
 {
@@ -65,7 +65,7 @@ BOOL GetAppDataPath(LPTSTR s)
 BOOL GetConfigFilename(LPTSTR s)
 {
   if (GetAppDataPath(s)) {
-    _tcscat(s, _T("\\LEGOIslandRebuilder"));
+    _tcscat(s, _T("\\LEGOIslandRebuilderSR"));
     if (RecursivelyCreateDirectory(s)) {
       _tcscat(s, _T("\\settings.ini"));
       return TRUE;

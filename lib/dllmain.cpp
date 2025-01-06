@@ -10,7 +10,7 @@
 __declspec(dllexport) DWORD WINAPI Patch()
 {
   if (!config.Load()) {
-    MessageBoxA(0, "Failed to find Rebuilder configuration. No patches will be active.", 0, 0);
+    MessageBoxA(0, "Failed to find RebuilderSR configuration. The game will start with its vanilla settings.", 0, 0);
     return 1;
   }
 

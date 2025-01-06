@@ -1,23 +1,23 @@
-# Microsoft Developer Studio Project File - Name="Rebuilder" - Package Owner=<4>
+# Microsoft Developer Studio Project File - Name="RebuilderSR" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
 # ** DO NOT EDIT **
 
 # TARGTYPE "Win32 (x86) Application" 0x0101
 
-CFG=REBUILDER - WIN32 RELEASE
+CFG=REBUILDERSR - WIN32 RELEASE
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
 !MESSAGE 
-!MESSAGE NMAKE /f "Rebuilder.mak".
+!MESSAGE NMAKE /f "RebuilderSR.mak".
 !MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE 
-!MESSAGE NMAKE /f "Rebuilder.mak" CFG="REBUILDER - WIN32 RELEASE"
+!MESSAGE NMAKE /f "RebuilderSR.mak" CFG="REBUILDERSR - WIN32 RELEASE"
 !MESSAGE 
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
-!MESSAGE "Rebuilder - Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE "RebuilderSR - Win32 Release" (based on "Win32 (x86) Application")
 !MESSAGE 
 
 # Begin Project
@@ -46,13 +46,13 @@ RSC=rc.exe
 # ADD RSC /l 0x409 /d "NDEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
-# ADD BSC32 /nologo
+# ADD BSC32 /nologo /o"Release/RebuilderSR.bsc"
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386
-# ADD LINK32 shlwapi.lib ddraw.lib dxguid.lib /nologo /subsystem:windows /machine:I386
+# ADD LINK32 shlwapi.lib ddraw.lib dxguid.lib /nologo /subsystem:windows /machine:I386 /out:"Release/RebuilderSR.exe"
 # Begin Target
 
-# Name "Rebuilder - Win32 Release"
+# Name "RebuilderSR - Win32 Release"
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"

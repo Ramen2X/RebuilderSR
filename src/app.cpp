@@ -18,7 +18,7 @@ BOOL CRebuilderApp::InitInstance()
     if (!strcmp(tokens, "--run") || !strcmp(tokens, "-r")) {
       run_only = true;
     } else if (!strcmp(tokens, "--help") || !strcmp(tokens, "-h")) {
-      ::MessageBoxA(0, "LEGO Island Rebuilder\n"
+      ::MessageBoxA(0, "LEGO Island Rebuilder (SR)\n"
                        "\n"
                        "Supported arguments:\n"
                        "\n"

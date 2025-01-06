@@ -15,7 +15,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "Rebuilder"=.\Rebuilder\Rebuilder.dsp - Package Owner=<4>
+Project: "RebuilderSR"=.\RebuilderSR\RebuilderSR.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
