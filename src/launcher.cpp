@@ -39,9 +39,6 @@ HANDLE Launcher::Launch(HWND parent)
       }
       compat += " DWM8And16BitMitigation";
     }
-    else {
-      compat += " 640X480";
-    }
 
     if (RegOpenKeyEx(HKEY_CURRENT_USER, "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers", 0, KEY_SET_VALUE, &hKey) == ERROR_SUCCESS) {
       // Often we seem to get an 8.3 path which is not valid here, so resolve the full path now
