@@ -5,6 +5,10 @@
   <b>LEGO Island Rebuilder (SR)</b>
 </h1>
 
+<p align="center">
+  <img src='./pkg/screenshot.png'>
+</p>
+
 <h4 align="center">A speedrunning-approved version of LEGO Island Rebuilder.</h4>
 
 ## Info
